@@ -10,12 +10,14 @@ import Contact from "@pages/Contact";
 import NotFound from "@pages/NotFound";
 import { Header } from "@components/Header";
 import { ThemeProvider } from "@contexts/ThemeContext";
+import { Toaster } from "@components/ui/Toaster";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
+      <Toaster />
       <BrowserRouter>
         <Header />
         <AnimatePresence mode="wait">

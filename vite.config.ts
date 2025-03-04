@@ -9,6 +9,7 @@ export default defineConfig({
       "@contexts": "/src/contexts",
       "@components": "/src/components",
       "@pages": "/src/pages",
+      "@hooks": "/src/hooks",
     },
   },
 });
