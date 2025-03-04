@@ -11,13 +11,14 @@ import NotFound from "@pages/NotFound";
 import { Header } from "@components/Header";
 import { ThemeProvider } from "@contexts/ThemeContext";
 import { Toaster } from "@components/ui/Toaster";
-
+import { Toaster as Sonner } from "@components/ui/Sonner";
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <Toaster />
+      <Sonner />
       <BrowserRouter>
         <Header />
         <AnimatePresence mode="wait">
