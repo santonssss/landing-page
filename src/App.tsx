@@ -12,6 +12,7 @@ import { Header } from "@components/Header";
 import { ThemeProvider } from "@contexts/ThemeContext";
 import { Toaster } from "@components/ui/Toaster";
 import { Toaster as Sonner } from "@components/ui/Sonner";
+import { Footer } from "@components/Footer";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   </QueryClientProvider>
