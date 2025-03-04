@@ -31,7 +31,7 @@ export function SocialLinks({
     },
     {
       name: "Email",
-      url: "mailto:hello@example.com",
+      url: "mailto:sarvarkalmuratov370@gmail.com",
       icon: Mail,
       label: "Send Email",
     },
