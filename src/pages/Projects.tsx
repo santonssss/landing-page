@@ -12,7 +12,19 @@ const Projects = () => {
       : projects.filter((project) =>
           project.technologies.includes(activeFilter)
         );
-
+  const technologiesRender = technologies.map((tech) => (
+    <button
+      key={tech}
+      onClick={() => setActiveFilter(tech)}
+      className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+        activeFilter === tech
+          ? "bg-primary text-primary-foreground"
+          : "bg-secondary hover:bg-secondary/80"
+      }`}
+    >
+      {tech}
+    </button>
+  ));
   return (
     <AnimatedTransition className="pt-24 pb-16">
       <div className="container px-4 mx-auto">
@@ -36,19 +48,7 @@ const Projects = () => {
             >
               All Projects
             </button>
-            {technologies.map((tech) => (
-              <button
-                key={tech}
-                onClick={() => setActiveFilter(tech)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeFilter === tech
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary hover:bg-secondary/80"
-                }`}
-              >
-                {tech}
-              </button>
-            ))}
+            {technologiesRender}
           </div>
         </div>
 

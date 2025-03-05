@@ -29,7 +29,27 @@ const Blog = () => {
       field.toLowerCase().includes(searchQuery.toLowerCase())
     )
   );
-
+  const filteredPostsRender =
+    filteredPosts.length > 0 ? (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredPosts.map((post, index) => (
+          <BlogCard
+            key={post.id}
+            post={post}
+            index={index}
+            title={highlightText(post.title, searchQuery)}
+            excerpt={highlightText(post.excerpt, searchQuery)}
+          />
+        ))}
+      </div>
+    ) : (
+      <div className="text-center py-12">
+        <h3 className="text-lg font-medium mb-2">No results found</h3>
+        <p className="text-muted-foreground">
+          Try adjusting your search query to find what you're looking for.
+        </p>
+      </div>
+    );
   return (
     <AnimatedTransition className="pt-24 pb-16">
       <div className="container px-4 mx-auto">
@@ -50,27 +70,7 @@ const Blog = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-
-        {filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
-              <BlogCard
-                key={post.id}
-                post={post}
-                index={index}
-                title={highlightText(post.title, searchQuery)}
-                excerpt={highlightText(post.excerpt, searchQuery)}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <h3 className="text-lg font-medium mb-2">No results found</h3>
-            <p className="text-muted-foreground">
-              Try adjusting your search query to find what you're looking for.
-            </p>
-          </div>
-        )}
+        {filteredPostsRender}
       </div>
     </AnimatedTransition>
   );
