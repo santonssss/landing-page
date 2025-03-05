@@ -13,13 +13,13 @@ export function SocialLinks({
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/santonssss",
       icon: Github,
       label: "GitHub Profile",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/sarvar-kalmuratov-445655304/",
       icon: Linkedin,
       label: "LinkedIn Profile",
     },

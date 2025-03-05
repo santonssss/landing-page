@@ -6,13 +6,13 @@ import About from "@pages/About";
 import Projects from "@pages/Projects";
 import Blog from "@pages/Blog";
 import BlogPost from "@pages/BlogPost";
-import Contact from "@pages/Contact";
 import NotFound from "@pages/NotFound";
 import { Header } from "@components/Header";
 import { ThemeProvider } from "@contexts/ThemeContext";
 import { Toaster } from "@components/ui/Toaster";
 import { Toaster as Sonner } from "@components/ui/Sonner";
 import { Footer } from "@components/Footer";
+import Contact from "@pages/Contact";
 const queryClient = new QueryClient();
 
 const App = () => (
